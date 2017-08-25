@@ -6,6 +6,7 @@ import javax.persistence.Table;
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zongmu.label.dbox.core.entity.EntityModel;
 
 @Entity
@@ -78,6 +79,7 @@ public class User extends EntityModel {
 		this.phone = phone;
 	}
 
+	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}
