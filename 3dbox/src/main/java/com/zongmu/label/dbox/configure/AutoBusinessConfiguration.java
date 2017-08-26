@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 import com.zongmu.label.dbox.login.service.LoginService;
 import com.zongmu.label.dbox.login.service.impl.LoginServiceImpl;
+import com.zongmu.label.dbox.task.review.service.ReasonService;
+import com.zongmu.label.dbox.task.review.service.impl.ReasonServiceImpl;
 import com.zongmu.label.dbox.user.service.UserService;
 import com.zongmu.label.dbox.user.service.impl.UserServiceImpl;
 import com.zongmu.label.dbox.video.attr.service.VideoAttributeService;
@@ -31,5 +33,10 @@ public class AutoBusinessConfiguration {
 	@Bean
 	public VideoAttributeService videoAttributeService() {
 		return new VideoAttributeServiceImpl(this.applicationContext);
+	}
+
+	@Bean
+	public ReasonService reasonService() {
+		return new ReasonServiceImpl(this.applicationContext);
 	}
 }
