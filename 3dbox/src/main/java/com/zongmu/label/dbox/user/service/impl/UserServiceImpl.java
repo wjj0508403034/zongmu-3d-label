@@ -20,4 +20,9 @@ public class UserServiceImpl extends BusinessService implements UserService {
 		return this.getBean(UserRepo.class).findAll(pageable);
 	}
 
+	@Override
+	public User findByEmail(String username) {
+		return this.getBean(UserRepo.class).findByEmail(username);
+	}
+
 }

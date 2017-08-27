@@ -9,6 +9,11 @@ public class ErrorCodes {
 	public final static String Login_Failed_Due_To_User_Locked = "E10003";
 	public final static String Login_Failed_Due_To_Password_Failed_Many_Times = "E10004";
 	public final static String Login_Failed_Due_To_Password_Invalid = "E10005";
+	
+	public final static String Register_Failed_Due_To_Email_Is_Empty = "E10006";
+	public final static String Register_Failed_Due_To_Password_Is_Empty = "E10007";
+	public final static String Register_Failed_Due_To_Password_Not_Match = "E10008";
+	public final static String Register_Failed_Due_To_User_Exists = "E10009";
 
 	public final static String Video_Attr_Exists = "E20001";
 	public final static String Video_Attr_Not_Exists = "E20002";
@@ -16,4 +21,7 @@ public class ErrorCodes {
 	public final static String Video_Attr_Value_Not_Exists = "E20004";
 	public final static String Reason_Exists = "E20005";
 	public static final String Reason_Not_Exists = "E20006";
+	
+	public static final String General_Error = "E90000";
+	public static final String BAD_REQUEST_NOT_ACCEPT_CONTENT_TYPE = "E90001";
 }

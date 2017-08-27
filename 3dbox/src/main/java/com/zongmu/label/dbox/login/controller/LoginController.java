@@ -25,6 +25,6 @@ public class LoginController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	@ResponseBody
 	public void register(@RequestBody RegisterParam registerParam) throws BusinessException {
-		//this.loginService.register(loginParam.getEmail(), loginParam.getPassword());
+		this.loginService.register(registerParam);
 	}
 }

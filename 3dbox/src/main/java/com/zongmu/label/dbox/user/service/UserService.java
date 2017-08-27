@@ -9,4 +9,6 @@ public interface UserService {
 
 	Page<User> findUsers(Pageable pageable);
 
+	User findByEmail(String username);
+
 }

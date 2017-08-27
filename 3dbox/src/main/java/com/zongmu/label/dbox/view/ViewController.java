@@ -31,4 +31,9 @@ public class ViewController {
 	public String forgetPassword() {
 		return "forget-password";
 	}
+
+	@RequestMapping(value = "/reset-password.html", method = RequestMethod.GET)
+	public String resetPassword() {
+		return "reset-password";
+	}
 }

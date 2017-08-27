@@ -2,6 +2,8 @@ package com.zongmu.label.dbox.email.impl;
 
 import java.util.Locale;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
@@ -11,6 +13,8 @@ import com.zongmu.label.dbox.error.ErrorCodes;
 import com.zongmu.label.dbox.locale.LocaleService;
 
 public class EmailTemplateImpl implements EmailTemplate {
+
+	private final static Logger LOGGER = LoggerFactory.getLogger(EmailTemplateImpl.class);
 
 	private Context context = new Context(Locale.CHINA);
 	private String emailName;
@@ -24,13 +28,14 @@ public class EmailTemplateImpl implements EmailTemplate {
 		try {
 			return templateEngine.process(this.emailName, context);
 		} catch (Exception ex) {
+			LOGGER.error("Process email template failed", ex);
 			throw new BusinessException(ErrorCodes.Parse_Email_Template_Failed);
 		}
 	}
 
 	@Override
 	public String getSubject(LocaleService localeService) {
-		return localeService.getMessage("Mail_Subject_" + this.emailName);
+		return localeService.getMessage("mail_subject_" + this.emailName.replace("/", "_"));
 	}
 
 	@Override
