@@ -16,4 +16,19 @@ public class ViewController {
 	public String index() {
 		return "index";
 	}
+
+	@RequestMapping(value = "/login.html", method = RequestMethod.GET)
+	public String login() {
+		return "login";
+	}
+
+	@RequestMapping(value = "/register.html", method = RequestMethod.GET)
+	public String register() {
+		return "register";
+	}
+
+	@RequestMapping(value = "/forget-password.html", method = RequestMethod.GET)
+	public String forgetPassword() {
+		return "forget-password";
+	}
 }

@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.zongmu.label.dbox.locale.LocaleService;
+import com.zongmu.label.dbox.locale.impl.LocaleServiceImpl;
 import com.zongmu.label.dbox.login.service.LoginService;
 import com.zongmu.label.dbox.login.service.impl.LoginServiceImpl;
 import com.zongmu.label.dbox.task.review.service.ReasonService;
@@ -19,6 +21,11 @@ public class AutoBusinessConfiguration {
 
 	@Autowired
 	private ApplicationContext applicationContext;
+
+	@Bean
+	public LocaleService localeService() {
+		return new LocaleServiceImpl(this.applicationContext);
+	}
 
 	@Bean
 	public LoginService loginService() {

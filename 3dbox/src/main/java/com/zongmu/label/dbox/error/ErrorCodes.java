@@ -1,13 +1,15 @@
 package com.zongmu.label.dbox.error;
 
 public class ErrorCodes {
+	public static final String Send_Mail_Failed = "E00000";
+	public static final String Parse_Email_Template_Failed = "E00001";
 
 	public final static String Login_Failed_Due_To_User_Not_Exists = "E10001";
 	public final static String Login_Failed_Due_To_User_Not_Active = "E10002";
 	public final static String Login_Failed_Due_To_User_Locked = "E10003";
 	public final static String Login_Failed_Due_To_Password_Failed_Many_Times = "E10004";
 	public final static String Login_Failed_Due_To_Password_Invalid = "E10005";
-	
+
 	public final static String Video_Attr_Exists = "E20001";
 	public final static String Video_Attr_Not_Exists = "E20002";
 	public final static String Video_Attr_Value_Exists = "E20003";
